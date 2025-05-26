@@ -6,4 +6,11 @@ jobs:
     steps:
       - name: get code
         uses: actions/checkout@v3
-     
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: deploy
+        run: echo "Deploying..."
+
