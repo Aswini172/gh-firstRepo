@@ -1,17 +1,16 @@
 name: Test project
-on: push
+on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
   deploy:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: deploy
         run: echo "Deploying..."
-
