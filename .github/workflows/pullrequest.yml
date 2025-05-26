@@ -1,0 +1,13 @@
+name: Deploy website
+on:
+    pull_request:
+        types: [closed]
+        branches:
+            - main
+jobs:
+    output_github_context:
+        runs-on: ubuntu_latest
+        steps:
+         - name: Output github context
+           run: echo "${{ toJSON(github.event.pull_request) }}"
+                
